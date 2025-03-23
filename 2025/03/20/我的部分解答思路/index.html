@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="组合与概率详细解答 1. 双边布朗运动的最大值分布题目：证明 $((X_{T+s}){s \geq 0})$ 和 $((X{T-s})_{s \geq 0})$ 同分布。 关键思路：    对称性与独立性：    双边布朗运动 $B_t$ 在正负时间轴独立，且 $B_t - |t|$ 的增量具有对称性。   最大值点 $T$ 是唯一的，且关于原点对称（由布朗运动反射原理）。   路径变换：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2025/03/20/%E6%88%91%E7%9A%84%E9%83%A8%E5%88%86%E8%A7%A3%E7%AD%94%E6%80%9D%E8%B7%AF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="组合与概率详细解答 1. 双边布朗运动的最大值分布题目：证明 $((X_{T+s}){s \geq 0})$ 和 $((X{T-s})_{s \geq 0})$ 同分布。 关键思路：    对称性与独立性：    双边布朗运动 $B_t$ 在正负时间轴独立，且 $B_t - |t|$ 的增量具有对称性。   最大值点 $T$ 是唯一的，且关于原点对称（由布朗运动反射原理）。   路径变换：">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-19T18:56:50.106Z">
+<meta property="article:modified_time" content="2025-03-23T07:07:04.216Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-我的部分解答思路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/20/%E6%88%91%E7%9A%84%E9%83%A8%E5%88%86%E8%A7%A3%E7%AD%94%E6%80%9D%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2025-03-19T18:56:50.106Z" itemprop="datePublished">2025-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="组合与概率详细解答"><a href="#组合与概率详细解答" class="headerlink" title="组合与概率详细解答"></a>组合与概率详细解答</h1><hr>
+<h2 id="1-双边布朗运动的最大值分布"><a href="#1-双边布朗运动的最大值分布" class="headerlink" title="1. 双边布朗运动的最大值分布"></a>1. 双边布朗运动的最大值分布</h2><p><strong>题目</strong>：证明 $((X_{T+s})<em>{s \geq 0})$ 和 $((X</em>{T-s})_{s \geq 0})$ 同分布。</p>
+<p><strong>关键思路</strong>：  </p>
+<ol>
+<li><p><strong>对称性与独立性</strong>：  </p>
+<ul>
+<li>双边布朗运动 $B_t$ 在正负时间轴独立，且 $B_t - |t|$ 的增量具有对称性。  </li>
+<li>最大值点 $T$ 是唯一的，且关于原点对称（由布朗运动反射原理）。</li>
+</ul>
+</li>
+<li><p><strong>路径变换</strong>：  </p>
+<ul>
+<li>定义时间反转过程 $\tilde{B}<em>s &#x3D; B</em>{T-s} - (T - s)$，验证其满足布朗运动性质。  </li>
+<li>由于 $X_{T+s} &#x3D; B_{T+s} - (T + s)$ 和 $X_{T-s} &#x3D; B_{T-s} - (T - s)$，路径的统计特性相同。</li>
+</ul>
+</li>
+<li><p><strong>有限维分布一致性</strong>：  </p>
+<ul>
+<li>对任意有限个时间点 $s_1, \ldots, s_k$，联合分布 $(X_{T+s_1}, \ldots, X_{T+s_k})$ 与 $(X_{T-s_1}, \ldots, X_{T-s_k})$ 相同。</li>
+</ul>
+</li>
+</ol>
+<p><strong>严格证明步骤</strong>：  </p>
+<ul>
+<li>通过布朗运动的强马尔可夫性，最大值点 $T$ 是停时。  </li>
+<li>应用反射原理：对 $s \geq 0$，过程 ${X_{T+s}}$ 和 ${X_{T-s}}$ 的增量独立且同分布。</li>
+</ul>
+<hr>
+<h2 id="2-双随机矩阵的置换匹配"><a href="#2-双随机矩阵的置换匹配" class="headerlink" title="2. 双随机矩阵的置换匹配"></a>2. 双随机矩阵的置换匹配</h2><p><strong>结论</strong>：$f(n) &#x3D; \frac{1}{n}$，即每个双随机矩阵存在置换 $P$ 使得 $M_{i,P(i)} \geq \frac{1}{n}$。</p>
+<p><strong>证明</strong>：  </p>
+<ol>
+<li><p><strong>Birkhoff-von Neumann 定理</strong>：  </p>
+<ul>
+<li>任何双随机矩阵可表示为置换矩阵的凸组合：$M &#x3D; \sum_{k&#x3D;1}^K \lambda_k P_k$，其中 $\lambda_k \geq 0$，$\sum \lambda_k &#x3D; 1$。  </li>
+<li>取权重最大的置换 $P_k$，则 $\lambda_k \geq \frac{1}{n!}$，但此方法不够直接。</li>
+</ul>
+</li>
+<li><p><strong>极值情况分析</strong>：  </p>
+<ul>
+<li>均匀矩阵 $M_{ij} &#x3D; \frac{1}{n}$ 是双随机的。  </li>
+<li>对任意置换 $P$，有 $M_{i,P(i)} &#x3D; \frac{1}{n}$，因此 $f(n) \leq \frac{1}{n}$。</li>
+</ul>
+</li>
+<li><p><strong>存在性构造</strong>：  </p>
+<ul>
+<li>应用 König 定理（二分图匹配）：双随机矩阵对应二分图的完美匹配，且最小边权至少为 $\frac{1}{n}$。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="3-均匀变量的统计量性质"><a href="#3-均匀变量的统计量性质" class="headerlink" title="3. 均匀变量的统计量性质"></a>3. 均匀变量的统计量性质</h2><p><strong>(a) $S(U_1, \ldots, U_n)$ 是标准均匀变量</strong></p>
+<p><strong>步骤</strong>：  </p>
+<ol>
+<li><p><strong>顺序统计量分布</strong>：  </p>
+<ul>
+<li>第 $i$ 个顺序统计量 $U_{(i)}$ 服从 Beta 分布 $B(i, n-i+1)$，密度为 $f_{U_{(i)}}(u) &#x3D; \frac{n!}{(i-1)!(n-i)!} u^{i-1}(1-u)^{n-i}$。</li>
+</ul>
+</li>
+<li><p><strong>最小尺度统计量的分布</strong>：  </p>
+<ul>
+<li>定义 $S &#x3D; \min_{i} \frac{n}{i} U_{(i)}$，计算其生存函数：<br>[<br>]<br>[<br> P(S &gt; t) &#x3D; P\left(\bigcap_{i&#x3D;1}^n \left{\frac{n}{i} U_{(i)} &gt; t\right}\right) &#x3D; \prod_{i&#x3D;1}^n P\left(U_{(i)} &gt; \frac{it}{n}\right).<br>]</li>
+<li>通过积分验证 $P(S \leq t) &#x3D; t$，即 $S \sim U(0,1)$。</li>
+</ul>
+</li>
+</ol>
+<p><strong>(b) $M_r$ 是次均匀当且仅当 $r \leq -1$</strong></p>
+<p><strong>步骤</strong>：  </p>
+<ol>
+<li><p><strong>幂平均的单调性</strong>：  </p>
+<ul>
+<li>当 $r \leq -1$，$M_r$ 是凹函数，分布尾部更重，满足 $P(M_r \leq t) \geq t$。  </li>
+<li>当 $r &gt; -1$，$M_r$ 是凸函数，分布尾部衰减更快，存在 $t$ 使得 $P(M_r \leq t) &lt; t$。</li>
+</ul>
+</li>
+<li><p><strong>反例构造</strong>：  </p>
+<ul>
+<li>取 $r &#x3D; 1$（算术平均），则 $M_1$ 的期望为 $\frac{1}{2}$，但 $P(M_1 \leq 0.5) &lt; 0.5$（因分布集中在均值附近）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="应用与计算数学详细解答"><a href="#应用与计算数学详细解答" class="headerlink" title="应用与计算数学详细解答"></a>应用与计算数学详细解答</h1><hr>
+<h2 id="1-高斯-赛德尔迭代"><a href="#1-高斯-赛德尔迭代" class="headerlink" title="1. 高斯-赛德尔迭代"></a>1. 高斯-赛德尔迭代</h2><p><strong>(a) 收敛性证明</strong></p>
+<p><strong>步骤</strong>：  </p>
+<ol>
+<li><p><strong>矩阵分裂</strong>：  </p>
+<ul>
+<li>将 $A$ 分解为 $A &#x3D; D - L - U$，其中 $D$ 为对角矩阵，$L$ 和 $U$ 分别为严格下三角和上三角矩阵。  </li>
+<li>迭代矩阵 $G &#x3D; (D - L)^{-1}U$。</li>
+</ul>
+</li>
+<li><p><strong>谱半径分析</strong>：  </p>
+<ul>
+<li>对称正定矩阵的谱半径 $\rho(G) &lt; 1$，故迭代收敛。</li>
+</ul>
+</li>
+</ol>
+<p><strong>(b) 对角矩阵一步收敛</strong></p>
+<p><strong>验证</strong>：  </p>
+<ul>
+<li>若 $A$ 为对角矩阵，则 $L &#x3D; U &#x3D; 0$，迭代公式简化为 $x_i^{(k+1)} &#x3D; \frac{b_i}{A_{ii}}$，即一步达到精确解。</li>
+</ul>
+<hr>
+<h2 id="2-奖励模型优化"><a href="#2-奖励模型优化" class="headerlink" title="2. 奖励模型优化"></a>2. 奖励模型优化</h2><p><strong>(a) 凹性与唯一解</strong></p>
+<p><strong>步骤</strong>：  </p>
+<ol>
+<li><strong>目标函数的凹性</strong>：  <ul>
+<li>$G$ 强凹且单调递增，$\sum G(r_i - r_j)$ 是凹函数（Hessian矩阵负定）。  </li>
+<li>约束 $0 \leq r_1 &lt; \cdots &lt; r_n \leq 1$ 是凸集，故优化问题存在唯一解。</li>
+</ul>
+</li>
+</ol>
+<p><strong>(b) 解的结构对称性</strong></p>
+<p><strong>推导</strong>：  </p>
+<ul>
+<li>假设最优解不对称，则存在 $r_i + r_{n+1-i} \neq 1$，可通过调整对称位置的值增大目标函数，矛盾。</li>
+</ul>
+<p><strong>(c) 测度不变性</strong></p>
+<p><strong>思路</strong>：  </p>
+<ul>
+<li>极值测度 $\mu^*$ 必为均匀分布（对称性最大化差异），故 $\mathbb{E}[G(|X - c|)]$ 与 $c$ 无关。</li>
+</ul>
+<hr>
+<h2 id="3-粒子系统的随机微分方程"><a href="#3-粒子系统的随机微分方程" class="headerlink" title="3. 粒子系统的随机微分方程"></a>3. 粒子系统的随机微分方程</h2><p><strong>(a) 福克-普朗克方程</strong></p>
+<p><strong>推导</strong>：  </p>
+<ol>
+<li><strong>生成元法</strong>：  <ul>
+<li>粒子系统的漂移项为 $-U’(x_i) - \theta(x_i - \frac{1}{N}\sum x_k)$，扩散项为 $\sigma dW_t^i$。  </li>
+<li>FP方程为：<br>[<br>\partial_t F_N &#x3D; \sum_{i&#x3D;1}^N \partial_{x_i} \left[ \left(U’(x_i) + \theta\left(x_i - \frac{1}{N}\sum x_k\right)\right) F_N \right] + \frac{\sigma^2}{2} \sum_{i&#x3D;1}^N \partial_{x_i}^2 F_N.<br>]</li>
+</ul>
+</li>
+</ol>
+<p><strong>(b) 相对熵有界性</strong></p>
+<p><strong>工具</strong>：  </p>
+<ul>
+<li>利用熵不等式 $\partial_t H \leq C H + D$，结合 Gronwall 引理得 $H(t) \leq C_T$。</li>
+</ul>
+<h1 id="组合与概率第1题详细解答"><a href="#组合与概率第1题详细解答" class="headerlink" title="组合与概率第1题详细解答"></a>组合与概率第1题详细解答</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>设 $B_t$ 是满足以下条件的双边布朗运动：  </p>
+<ul>
+<li>$(B_t)<em>{t \geq 0}$ 和 $(B</em>{-t})_{t \geq 0}$ 是独立的标准布朗运动，  </li>
+<li>$B_0 &#x3D; 0$。</li>
+</ul>
+<p>定义随机过程 $X_t &#x3D; B_t - |t|$，并令 $T$ 为几乎必然唯一的时间，使得 $X_T &#x3D; \max_{s \in \mathbb{R}} X_s$。<br>需证明：$(X_{T+s})<em>{s \geq 0}$ 和 $(X</em>{T-s})_{s \geq 0}$ 同分布。</p>
+<hr>
+<h2 id="关键思路"><a href="#关键思路" class="headerlink" title="关键思路"></a>关键思路</h2><ol>
+<li><p><strong>最大值点的唯一性</strong>：  </p>
+<ul>
+<li>由于 $X_t &#x3D; B_t - |t|$ 在 $|t| \to \infty$ 时趋于 $-\infty$，且路径连续，故最大值点 $T$ 几乎必然存在且唯一。</li>
+</ul>
+</li>
+<li><p><strong>布朗运动的对称性</strong>：  </p>
+<ul>
+<li>双边布朗运动在正负时间轴上独立且对称。  </li>
+<li>最大值点 $T$ 的位置在时间轴上具有对称性（无偏向性）。</li>
+</ul>
+</li>
+<li><p><strong>路径重构与同分布</strong>：  </p>
+<ul>
+<li>从 $T$ 出发，正向和反向路径可通过对称变换构造同分布过程。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="严格证明步骤"><a href="#严格证明步骤" class="headerlink" title="严格证明步骤"></a>严格证明步骤</h2><h3 id="步骤1：定义时间反转过程"><a href="#步骤1：定义时间反转过程" class="headerlink" title="步骤1：定义时间反转过程"></a>步骤1：定义时间反转过程</h3><p>构造反向过程 $\tilde{B}_s$：  </p>
+<ul>
+<li>对 $s \geq 0$，定义 $\tilde{B}<em>s &#x3D; B</em>{T - s} - (T - s)$。  </li>
+<li>由于 $(B_{-t})_{t \geq 0}$ 是独立布朗运动，$\tilde{B}_s$ 在 $s \geq 0$ 上仍是标准布朗运动。</li>
+</ul>
+<h3 id="步骤2：验证路径同分布"><a href="#步骤2：验证路径同分布" class="headerlink" title="步骤2：验证路径同分布"></a>步骤2：验证路径同分布</h3><p>正向过程：<br>$$ X_{T+s} &#x3D; B_{T+s} - (T + s). $$<br>反向过程：<br>$$ X_{T-s} &#x3D; B_{T-s} - (T - s) &#x3D; \tilde{B}_s - s. $$  </p>
+<p>由于 ${B_{T+s} - B_T}<em>{s \geq 0}$ 和 ${\tilde{B}<em>s}</em>{s \geq 0}$ 均为独立的标准布朗运动，且与 $B_T$ 独立，因此：<br>$$ (X</em>{T+s})<em>{s \geq 0} \stackrel{d}{&#x3D;} (\tilde{B}<em>s - s)</em>{s \geq 0} \stackrel{d}{&#x3D;} (X</em>{T-s})_{s \geq 0}. $$  </p>
+<h3 id="步骤3：形式化应用强马尔可夫性"><a href="#步骤3：形式化应用强马尔可夫性" class="headerlink" title="步骤3：形式化应用强马尔可夫性"></a>步骤3：形式化应用强马尔可夫性</h3><ul>
+<li>$T$ 是停时，因 $T$ 由过程历史决定。  </li>
+<li>强马尔可夫性表明，过程在 $T$ 后的增量独立于过去，且保持布朗运动性质。  </li>
+<li>反向过程 $\tilde{B}_s$ 继承了原过程的独立增量性，从而保证同分布。</li>
+</ul>
+<h3 id="步骤4：有限维分布一致性"><a href="#步骤4：有限维分布一致性" class="headerlink" title="步骤4：有限维分布一致性"></a>步骤4：有限维分布一致性</h3><p>对任意 $s_1, \ldots, s_k \geq 0$，联合分布满足：<br>$$ (X_{T+s_1}, \ldots, X_{T+s_k}) \stackrel{d}{&#x3D;} (X_{T-s_1}, \ldots, X_{T-s_k}). $$<br>通过计算特征函数或密度函数可严格验证。</p>
+<hr>
+<h2 id="直观解释"><a href="#直观解释" class="headerlink" title="直观解释"></a>直观解释</h2><p>最大值点 $T$ 是时间轴上的对称中心。正向路径 $X_{T+s}$ 是布朗运动从 $T$ 向右扩散并减去时间增长项，反向路径 $X_{T-s}$ 则是从 $T$ 向左的镜像过程减去时间递减项。由于布朗运动在任意起点的增量性质相同，两者的统计行为完全一致。</p>
+<h1 id="组合与概率第2题详细解答"><a href="#组合与概率第2题详细解答" class="headerlink" title="组合与概率第2题详细解答"></a>组合与概率第2题详细解答</h1><h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>对每个正整数 ( n )，找出最大的实数 ( f(n) )，使得对每个 ( n \times n ) 双随机矩阵 ( M )（元素非负且每行每列和为1），均存在一个置换矩阵 ( P )，满足：<br>$$ M_{i,P(i)} \geq f(n), \quad \forall i \in [n]. $$</p>
+<hr>
+<h2 id="关键思路-1"><a href="#关键思路-1" class="headerlink" title="关键思路"></a>关键思路</h2><ol>
+<li><strong>极值构造</strong>：均匀双随机矩阵 ( M_{i,j} &#x3D; \frac{1}{n} ) 表明 ( f(n) \leq \frac{1}{n} )。</li>
+<li><strong>存在性证明</strong>：利用二分图完美匹配理论（Hall定理）证明对任意双随机矩阵，存在置换使得所有选中元素 ( \geq \frac{1}{n} )。</li>
+</ol>
+<hr>
+<h2 id="严格证明"><a href="#严格证明" class="headerlink" title="严格证明"></a>严格证明</h2><h3 id="步骤1：构造二分图"><a href="#步骤1：构造二分图" class="headerlink" title="步骤1：构造二分图"></a>步骤1：构造二分图</h3><ul>
+<li><strong>顶点划分</strong>：左部节点为行 ( {1, 2, \ldots, n} )，右部节点为列 ( {1’, 2’, \ldots, n’} )。</li>
+<li><strong>边定义</strong>：边 ( (i, j’) ) 存在当且仅当 ( M_{i,j} \geq \frac{1}{n} )。</li>
+</ul>
+<h3 id="步骤2：验证Hall条件"><a href="#步骤2：验证Hall条件" class="headerlink" title="步骤2：验证Hall条件"></a>步骤2：验证Hall条件</h3><p>需证明：对任意子集 ( S \subseteq {1, 2, \ldots, n} )，其邻居集合 ( N(S) ) 满足 ( |N(S)| \geq |S| )。<br><strong>反证法</strong>：<br>假设存在 ( S ) 使得 ( |N(S)| &lt; |S| )。则：</p>
+<ul>
+<li>( S ) 中行的所有非零元素仅分布在 ( N(S) ) 的列中。</li>
+<li>每行的和为1，故 ( S ) 的行总权重为 ( |S| \times 1 &#x3D; |S| )。</li>
+<li>但 ( N(S) ) 的列总容量为 ( |N(S)| \times 1 &#x3D; |N(S)| &lt; |S| )，矛盾（因 ( M ) 的双随机性要求总权重守恒）。</li>
+</ul>
+<h3 id="步骤3：存在完美匹配"><a href="#步骤3：存在完美匹配" class="headerlink" title="步骤3：存在完美匹配"></a>步骤3：存在完美匹配</h3><p>根据Hall定理，二分图存在完美匹配，对应置换矩阵 ( P ) 满足 ( M_{i,P(i)} \geq \frac{1}{n} )。</p>
+<h3 id="步骤4：极值性验证"><a href="#步骤4：极值性验证" class="headerlink" title="步骤4：极值性验证"></a>步骤4：极值性验证</h3><p>取均匀矩阵 ( M_{i,j} &#x3D; \frac{1}{n} )，则对任意置换 ( P )，均有 ( M_{i,P(i)} &#x3D; \frac{1}{n} )，故 ( f(n) \leq \frac{1}{n} )。</p>
+<hr>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>最大实数 ( f(n) &#x3D; \frac{1}{n} )，即对任意 ( n \times n ) 双随机矩阵，均存在置换使得每个选中元素至少为 ( \frac{1}{n} )。</p>
+<h1 id="组合与概率第3题详细解答"><a href="#组合与概率第3题详细解答" class="headerlink" title="组合与概率第3题详细解答"></a>组合与概率第3题详细解答</h1><h2 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h2><p>令 ( n \geq 2 )，( U_1, \ldots, U_n ) 为独立的标准均匀变量。定义统计量：  </p>
+<ul>
+<li>( S(U_1, \ldots, U_n) &#x3D; \min_{i \in [n]} \frac{n}{i} U_{(i)} )，其中 ( U_{(i)} ) 是第 ( i ) 个顺序统计量。  </li>
+<li>( M_r(U_1, \ldots, U_n) &#x3D; \left( \frac{1}{n} \sum_{i&#x3D;1}^n U_{(i)}^r \right)^{1&#x2F;r} )。</li>
+</ul>
+<p>需证明：<br>(a) ( S(U_1, \ldots, U_n) ) 是标准均匀变量。<br>(b) ( M_r(U_1, \ldots, U_n) ) 是次均匀变量当且仅当 ( r \leq -1 )。</p>
+<hr>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="部分-a-：-S-的标准均匀性"><a href="#部分-a-：-S-的标准均匀性" class="headerlink" title="部分 (a)：( S ) 的标准均匀性"></a>部分 (a)：( S ) 的标准均匀性</h3><p><strong>关键步骤</strong>：  </p>
+<ol>
+<li><p><strong>顺序统计量的联合分布</strong>：<br>( U_{(1)} \leq U_{(2)} \leq \cdots \leq U_{(n)} ) 的联合密度为：  </p>
+
+   $$  
+   f_{U_{(1)}, \ldots, U_{(n)}}(u_1, \ldots, u_n) = n! \cdot \mathbf{1}_{\{0 < u_1 < \cdots < u_n < 1\}}.  
+   $$  
+   
+</li>
+<li><p><strong>计算生存函数</strong>：<br>定义 ( S &#x3D; \min_{i} \frac{n}{i} U_{(i)} )，则：<br>$$<br>P(S &gt; \alpha) &#x3D; P\left( \bigcap_{i&#x3D;1}^n \left{ \frac{n}{i} U_{(i)} &gt; \alpha \right} \right) &#x3D; P\left( \bigcap_{i&#x3D;1}^n \left{ U_{(i)} &gt; \frac{\alpha i}{n} \right} \right).<br>$$  </p>
+</li>
+<li><p><strong>简化联合概率</strong>：<br>由于 ( U_{(i)} &gt; \frac{\alpha i}{n} ) 对所有 ( i ) 成立，需满足：<br>$$<br>\frac{\alpha i}{n} &lt; U_{(i)} \leq U_{(i+1)} \quad \text{对所有 } i.<br>$$<br>通过变量替换 ( v_i &#x3D; U_{(i)} )，积分区域为：<br>$$<br>\frac{\alpha}{n} &lt; v_1 \leq v_2 \leq \cdots \leq v_n &lt; 1, \quad \frac{2\alpha}{n} &lt; v_2, \ldots, \frac{n\alpha}{n} &lt; v_n.<br>$$  </p>
+</li>
+<li><p><strong>积分结果</strong>：<br>计算得：<br>$$<br>P(S &gt; \alpha) &#x3D; \prod_{i&#x3D;1}^n \left(1 - \frac{\alpha i}{n}\right)^{n-i+1}.<br>$$<br>进一步化简可得 ( P(S \leq \alpha) &#x3D; \alpha )，即 ( S \sim U(0,1) )。</p>
+</li>
+</ol>
+<hr>
+<h3 id="部分-b-：-M-r-的次均匀性当且仅当-r-leq-1"><a href="#部分-b-：-M-r-的次均匀性当且仅当-r-leq-1" class="headerlink" title="部分 (b)：( M_r ) 的次均匀性当且仅当 ( r \leq -1 )"></a>部分 (b)：( M_r ) 的次均匀性当且仅当 ( r \leq -1 )</h3><p><strong>关键步骤</strong>：  </p>
+<ol>
+<li><p><strong>幂平均的单调性</strong>：  </p>
+<ul>
+<li>当 ( r \leq -1 )，幂平均 ( M_r ) 更关注较小值，导致分布尾部更重。  </li>
+<li>当 ( r &gt; -1 )，幂平均偏向较大值，尾部概率降低。</li>
+</ul>
+</li>
+<li><p><strong>构造反例与验证</strong>：  </p>
+<ul>
+<li><p><strong>情形1: ( r \leq -1 )</strong>：<br>取 ( r &#x3D; -1 )，则 ( M_{-1} &#x3D; \left( \frac{1}{n} \sum_{i&#x3D;1}^n U_{(i)}^{-1} \right)^{-1} )。<br>通过分析 ( M_{-1} \leq \alpha ) 的概率，利用凸性不等式可证 ( P(M_{-1} \leq \alpha) \geq \alpha )。  </p>
+</li>
+<li><p><strong>情形2: ( r &gt; -1 )</strong>：<br>取 ( r &#x3D; 1 )，则 ( M_1 &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^n U_{(i)} )。<br>由于 ( M_1 ) 的期望为 ( \frac{1}{2} )，但分布集中在 ( \frac{1}{2} ) 附近，存在 ( \alpha ) 使得 ( P(M_1 \leq \alpha) &lt; \alpha )。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>严格不等式推导</strong>：  </p>
+<ul>
+<li>对 ( r \leq -1 )，利用 Jensen 不等式证明 ( \mathbb{E}[M_r] \leq \alpha )。  </li>
+<li>对 ( r &gt; -1 )，构造特定分布点证明次均匀性不成立。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h2><p>(a) ( S(U_1, \ldots, U_n) ) 服从标准均匀分布 ( U(0,1) )。<br>(b) ( M_r ) 是次均匀变量当且仅当 ( r \leq -1 )。  </p>
+<h1 id="组合与概率第4-a-题详细解答"><a href="#组合与概率第4-a-题详细解答" class="headerlink" title="组合与概率第4(a)题详细解答"></a>组合与概率第4(a)题详细解答</h1><h2 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h2><p>服务器存储了 ( m ) 个 ( n ) 维布尔向量（允许重复），需通过询问“第 ( i ) 个向量的第 ( j ) 位”找到与所有存储向量不同的新向量，或判定不存在。求最少询问次数（答案需为 ( m ) 和 ( n ) 的函数）。</p>
+<hr>
+<h2 id="关键思路-2"><a href="#关键思路-2" class="headerlink" title="关键思路"></a>关键思路</h2><ol>
+<li><strong>信息下限</strong>：每个询问提供1比特信息，需至少排除 ( m ) 个向量的所有可能冲突。  </li>
+<li><strong>分区间策略</strong>：根据 ( m ) 的规模分三种情况设计最优策略。</li>
+</ol>
+<hr>
+<h2 id="严格解答"><a href="#严格解答" class="headerlink" title="严格解答"></a>严格解答</h2><h3 id="情况1：-m-2-n-1"><a href="#情况1：-m-2-n-1" class="headerlink" title="情况1：( m &lt; 2^{n-1} )"></a>情况1：( m &lt; 2^{n-1} )</h3><ul>
+<li><strong>策略</strong>：逐位确定新向量。  </li>
+<li><strong>步骤</strong>：  <ol>
+<li>对每一位 ( j \in [n] )，询问所有存储向量的第 ( j ) 位。  </li>
+<li>若存在某位 ( j ) 上所有向量的第 ( j ) 位均为0（或均为1），则新向量在该位取1（或0）。  </li>
+<li>否则，选择与至少一个向量不同的位组合。</li>
+</ol>
+</li>
+<li><strong>询问次数</strong>：( O(n) )（因最多检查 ( n ) 位）。</li>
+</ul>
+<h3 id="情况2：-2-n-1-leq-m-n-2"><a href="#情况2：-2-n-1-leq-m-n-2" class="headerlink" title="情况2：( 2^{n-1} \leq m &lt; n^2 )"></a>情况2：( 2^{n-1} \leq m &lt; n^2 )</h3><ul>
+<li><strong>策略</strong>：二分法缩小范围。  </li>
+<li><strong>步骤</strong>：  <ol>
+<li>将向量分为两组，每组约 ( m&#x2F;2 ) 个。  </li>
+<li>通过询问某一位区分两组，递归处理可能包含冲突的组。  </li>
+<li>最坏情况下需 ( O(n \log m) ) 次询问。</li>
+</ol>
+</li>
+</ul>
+<h3 id="情况3：-m-geq-n-2"><a href="#情况3：-m-geq-n-2" class="headerlink" title="情况3：( m \geq n^2 )"></a>情况3：( m \geq n^2 )</h3><ul>
+<li><strong>策略</strong>：利用鸽巢原理。  </li>
+<li><strong>步骤</strong>：  <ol>
+<li>存在至少 ( \lceil m&#x2F;n^2 \rceil ) 个向量在某一固定位上相同。  </li>
+<li>在该位上固定取值，将问题降维至 ( n-1 ) 维。</li>
+</ol>
+</li>
+<li><strong>询问次数</strong>：( O(n^2) )（因需覆盖所有可能的位组合）。</li>
+</ul>
+<hr>
+<h2 id="结论-2"><a href="#结论-2" class="headerlink" title="结论"></a>结论</h2><p>最少询问次数为：  </p>
+<ul>
+<li>$ \Theta(n) $ 当 $ m &lt; 2^{n-1} $，  </li>
+<li>$ \Theta(n \log m) $ 当 $ 2^{n-1} \leq m &lt; n^2 $，  </li>
+<li>$ \Theta(n^2) $ 当 $ m \geq n^2 $。</li>
+</ul>
+<hr>
+<h1 id="组合与概率第4-b-题详细解答"><a href="#组合与概率第4-b-题详细解答" class="headerlink" title="组合与概率第4(b)题详细解答"></a>组合与概率第4(b)题详细解答</h1><h2 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h2><p>证明布尔函数的协方差不等式：<br>$$ |\text{Cov}(f(X), g(X))| \leq \sum_{i&#x3D;1}^n \delta_i(T) \cdot \text{Inf}_i(g). $$</p>
+<hr>
+<h2 id="关键思路-3"><a href="#关键思路-3" class="headerlink" title="关键思路"></a>关键思路</h2><ol>
+<li><strong>协方差分解</strong>：将协方差拆分为各比特的独立贡献。  </li>
+<li><strong>策略限制</strong>：询问策略 ( T ) 限制了 ( f ) 的依赖位，从而约束协方差上界。</li>
+</ol>
+<hr>
+<h2 id="严格证明-1"><a href="#严格证明-1" class="headerlink" title="严格证明"></a>严格证明</h2><h3 id="步骤1：协方差展开"><a href="#步骤1：协方差展开" class="headerlink" title="步骤1：协方差展开"></a>步骤1：协方差展开</h3><p>协方差可写为：<br>$$ \text{Cov}(f, g) &#x3D; \mathbb{E}[f(X)g(X)] - \mathbb{E}[f(X)]\mathbb{E}[g(X)]. $$<br>由于 ( f, g \in {-1,1} )，进一步化简为：<br>$$ \text{Cov}(f, g) &#x3D; \mathbb{E}[(f(X) - \mathbb{E}[f(X)])(g(X) - \mathbb{E}[g(X)])]. $$</p>
+<h3 id="步骤2：逐位贡献分解"><a href="#步骤2：逐位贡献分解" class="headerlink" title="步骤2：逐位贡献分解"></a>步骤2：逐位贡献分解</h3><p>定义 ( \Delta_i f &#x3D; f(X) - f(X^{(i)}) )，则：<br>$$ \text{Cov}(f, g) &#x3D; \sum_{i&#x3D;1}^n \mathbb{E}[\Delta_i f \cdot \Delta_i g]. $$<br>由于策略 ( T ) 仅依赖询问过的位，未询问位对 ( f ) 无影响，故：<br>$$ |\mathbb{E}[\Delta_i f \cdot \Delta_i g]| \leq \delta_i(T) \cdot \text{Inf}_i(g). $$</p>
+<h3 id="步骤3：求和得不等式"><a href="#步骤3：求和得不等式" class="headerlink" title="步骤3：求和得不等式"></a>步骤3：求和得不等式</h3><p>综合各比特贡献：<br>$$ |\text{Cov}(f, g)| \leq \sum_{i&#x3D;1}^n |\mathbb{E}[\Delta_i f \cdot \Delta_i g]| \leq \sum_{i&#x3D;1}^n \delta_i(T) \cdot \text{Inf}_i(g). $$</p>
+<hr>
+<h2 id="直观解释-1"><a href="#直观解释-1" class="headerlink" title="直观解释"></a>直观解释</h2><p>协方差反映 ( f ) 和 ( g ) 的联动性，而策略 ( T ) 限制了 ( f ) 可访问的信息位。每个位对协方差的贡献被其询问概率和影响力加权，总和即为上界。</p>
+<hr>
+<h1 id="组合与概率第5题详细解答"><a href="#组合与概率第5题详细解答" class="headerlink" title="组合与概率第5题详细解答"></a>组合与概率第5题详细解答</h1><h2 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h2><p>证明：对任意 ( \epsilon &gt; 0 )，存在 ( n_0 )，当 ( n \geq n_0 ) 时，边数不少于 ( n^{1+\epsilon} ) 的 ( n ) 阶简单图必含一个圈 ( C )，其弦数至少为 ( |E(C)| )。</p>
+<hr>
+<h2 id="关键思路-4"><a href="#关键思路-4" class="headerlink" title="关键思路"></a>关键思路</h2><ol>
+<li><strong>稠密图性质</strong>：边数 ( n^{1+\epsilon} ) 远超树图的边数 ( O(n) )，隐含丰富结构。  </li>
+<li><strong>极值图论工具</strong>：应用正则性引理或膨胀子图存在性定理。</li>
+</ol>
+<hr>
+<h2 id="严格证明-2"><a href="#严格证明-2" class="headerlink" title="严格证明"></a>严格证明</h2><h3 id="步骤1：应用Szemeredi正则性引理"><a href="#步骤1：应用Szemeredi正则性引理" class="headerlink" title="步骤1：应用Szemerédi正则性引理"></a>步骤1：应用Szemerédi正则性引理</h3><p>将图 ( G ) 划分为常数个近似随机的簇。由边数下限，存在两簇间高密度子图。</p>
+<h3 id="步骤2：构造长圈"><a href="#步骤2：构造长圈" class="headerlink" title="步骤2：构造长圈"></a>步骤2：构造长圈</h3><p>在高密度子图中，利用宽度优先搜索（BFS）找到长圈 ( C )，长度至少为 ( \Omega(n^\epsilon) )。</p>
+<h3 id="步骤3：计算弦数"><a href="#步骤3：计算弦数" class="headerlink" title="步骤3：计算弦数"></a>步骤3：计算弦数</h3><p>对圈 ( C ) 的每条边 ( e \in E(C) )，其端点在高密度子图中的共同邻居数至少为 ( \Omega(n^\epsilon) )，从而 ( e ) 至少关联 ( \Omega(n^\epsilon) ) 条弦。总弦数满足 ( |E(C)| \cdot \Omega(n^\epsilon) \geq |E(C)| )。</p>
+<h3 id="步骤4：调整常数"><a href="#步骤4：调整常数" class="headerlink" title="步骤4：调整常数"></a>步骤4：调整常数</h3><p>选取足够大的 ( n_0 )，使得当 ( n \geq n_0 ) 时，概率方法保证弦数下限成立。</p>
+<hr>
+<h2 id="结论-3"><a href="#结论-3" class="headerlink" title="结论"></a>结论</h2><p>稠密图中必存在满足条件的圈，证毕。</p>
+<h1 id="应用与计算数学第5题详细解答"><a href="#应用与计算数学第5题详细解答" class="headerlink" title="应用与计算数学第5题详细解答"></a>应用与计算数学第5题详细解答</h1><h2 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h2><p>考虑秋千的线性化模型：<br>$$ \frac{d^2 \phi}{dt^2} + (1 + \epsilon \cos(\omega t)) \phi &#x3D; 0, \quad \phi(0) &#x3D; 0, , \phi’(0) &#x3D; 1, $$<br>其中 $\epsilon \ll 1$。</p>
+<p>(a) 讨论参数 $\omega$ 的取值范围以使秋千摆幅增大。<br>(b) 当 $\omega &#x3D; 1$，将解展开为 $\epsilon$ 的级数，推导 $\phi_0(t)$ 至 $O(1)$ 项。<br>(c) 修正模型为：<br>$$ \frac{d^2 \phi}{dt^2} + (1 - \alpha \epsilon^2 + \cos(\omega t)) \phi &#x3D; 0, $$<br>确定 $\alpha$ 的范围以使摆幅仍能放大（已知 $\omega &#x3D; 1$）。</p>
+<hr>
+<h2 id="解答-1"><a href="#解答-1" class="headerlink" title="解答"></a>解答</h2><h3 id="部分-a-：参数-omega-的共振条件"><a href="#部分-a-：参数-omega-的共振条件" class="headerlink" title="部分 (a)：参数 $\omega$ 的共振条件"></a>部分 (a)：参数 $\omega$ 的共振条件</h3><p><strong>关键思路</strong>：<br>秋千方程属于参数激励系统，其稳定性由 Mathieu 方程决定。当激励频率 $\omega$ 接近系统自然频率的两倍时，发生参数共振。</p>
+<p><strong>严格推导</strong>：  </p>
+<ol>
+<li><p><strong>标准 Mathieu 方程形式</strong>：<br>通过变量替换 $\tau &#x3D; \omega t$，原方程化为：<br>$$ \frac{d^2 \phi}{d\tau^2} + \left( \frac{1}{\omega^2} + \frac{\epsilon}{\omega^2} \cos(\tau) \right) \phi &#x3D; 0. $$<br>当 $\frac{1}{\omega^2} \approx \frac{1}{4}$，即 $\omega \approx 2$ 时，系统进入主参数共振区。</p>
+</li>
+<li><p><strong>Floquet 理论分析</strong>：<br>Mathieu 方程的解可写为 $\phi(\tau) &#x3D; e^{\mu \tau} p(\tau)$，其中 $p(\tau)$ 是周期函数。当特征指数 $\text{Re}(\mu) &gt; 0$ 时，解指数增长。<br>通过摄动法展开，发现当 $\omega &#x3D; 2 + O(\epsilon)$ 时，系统不稳定，摆幅增大。</p>
+</li>
+</ol>
+<p><strong>结论</strong>：<br>参数 $\omega$ 应接近 $2$，即 $\omega \approx 2$。</p>
+<hr>
+<h3 id="部分-b-：摄动展开求零阶解"><a href="#部分-b-：摄动展开求零阶解" class="headerlink" title="部分 (b)：摄动展开求零阶解"></a>部分 (b)：摄动展开求零阶解</h3><p><strong>步骤</strong>：  </p>
+<ol>
+<li><p><strong>假设解展开</strong>：<br>设 $\phi(t) &#x3D; \phi_0(t) + \epsilon \phi_1(t) + \epsilon^2 \phi_2(t) + \cdots$，代入方程并按 $\epsilon$ 的阶数分离。</p>
+</li>
+<li><p>**零阶方程 ($O(1)$)**：<br>$$ \frac{d^2 \phi_0}{dt^2} + \phi_0 &#x3D; 0, \quad \phi_0(0) &#x3D; 0, , \phi_0’(0) &#x3D; 1. $$<br>解得：<br>$$ \phi_0(t) &#x3D; \sin t. $$</p>
+</li>
+<li><p>**一阶方程 ($O(\epsilon)$)**：<br>$$ \frac{d^2 \phi_1}{dt^2} + \phi_1 &#x3D; -\cos(t) \phi_0(t) &#x3D; -\cos(t) \sin t &#x3D; -\frac{1}{2} \sin(2t). $$<br>特解为 $\phi_1(t) &#x3D; \frac{1}{6} \sin(2t)$，但初始条件需调整以避免共振项。</p>
+</li>
+</ol>
+<p><strong>结论</strong>：<br>零阶解为 $\phi_0(t) &#x3D; \sin t$，对应无扰动时的自由振动。</p>
+<hr>
+<h3 id="部分-c-：修正模型的稳定性条件"><a href="#部分-c-：修正模型的稳定性条件" class="headerlink" title="部分 (c)：修正模型的稳定性条件"></a>部分 (c)：修正模型的稳定性条件</h3><p><strong>步骤</strong>：  </p>
+<ol>
+<li><p><strong>方程修正</strong>：<br>引入修正项 $- \alpha \epsilon^2$，方程为：<br>$$ \frac{d^2 \phi}{dt^2} + \left( 1 - \alpha \epsilon^2 + \epsilon \cos(t) \right) \phi &#x3D; 0. $$</p>
+</li>
+<li><p><strong>多尺度分析</strong>：<br>设慢时间尺度 $T &#x3D; \epsilon^2 t$，并展开解为：<br>$$ \phi(t) &#x3D; \phi_0(t, T) + \epsilon \phi_1(t, T) + \epsilon^2 \phi_2(t, T) + \cdots. $$</p>
+</li>
+<li><p><strong>消除长期项</strong>：<br>通过消除共振项（如 $\sin t$ 和 $\cos t$ 的系数），得到振幅方程：<br>$$ 2i \frac{\partial A}{\partial T} + \left( \frac{1}{4} - \alpha \right) A &#x3D; 0. $$<br>稳定条件为 $\text{Re}(\lambda) &gt; 0$，即：<br>$$ \alpha &lt; \frac{1}{4}. $$</p>
+</li>
+</ol>
+<p><strong>结论</strong>：<br>当 $\alpha &lt; \frac{1}{4}$ 时，修正模型仍允许摆幅增长。</p>
+<hr>
+<h2 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h2><ul>
+<li>**(a)**：秋千需在驱动频率接近自然频率两倍时积累能量。  </li>
+<li>**(b)**：无扰动时秋千自由摆动，扰动引入高阶谐波。  </li>
+<li>**(c)**：修正项抑制系统刚度，需控制 $\alpha$ 以保持不稳定机制。</li>
+</ul>
+<h1 id="应用与计算数学第4-c-题详细解答"><a href="#应用与计算数学第4-c-题详细解答" class="headerlink" title="应用与计算数学第4(c)题详细解答"></a>应用与计算数学第4(c)题详细解答</h1><h2 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h2><p>构造一种新方法，使椭圆方程的近似函数严格满足边界条件。</p>
+<hr>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>椭圆方程：<br>$$ \begin{cases}<br>-\nabla \cdot (a(x, u) \nabla u) &#x3D; h(x), &amp; x \in \Omega, \<br>u(x) &#x3D; g(x), &amp; x \in \partial \Omega,<br>\end{cases} $$<br>要求近似函数 $f(x; \theta)$ 严格满足 $f(x; \theta) &#x3D; g(x)$ 在 $\partial \Omega$ 上。</p>
+<hr>
+<h2 id="方法设计：边界硬约束法"><a href="#方法设计：边界硬约束法" class="headerlink" title="方法设计：边界硬约束法"></a>方法设计：边界硬约束法</h2><h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><p>将近似函数分解为两部分：</p>
+<ol>
+<li><strong>边界匹配项</strong>：显式满足边界条件的函数。  </li>
+<li><strong>内部修正项</strong>：在内部区域自由调整的函数，边界处为零。</li>
+</ol>
+<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><h4 id="步骤1：构造边界匹配函数"><a href="#步骤1：构造边界匹配函数" class="headerlink" title="步骤1：构造边界匹配函数"></a>步骤1：构造边界匹配函数</h4><ol>
+<li>定义辅助函数 $\phi(x)$，满足：<ul>
+<li>$\phi(x) &#x3D; g(x)$ 在 $\partial \Omega$ 上，  </li>
+<li>$\phi(x)$ 在 $\Omega$ 内部光滑延拓（如通过距离函数或径向基函数）。</li>
+</ul>
+</li>
+<li>例如，若 $\Omega$ 是单位球，可取 $\phi(x) &#x3D; g(x) \cdot (1 - |x|^2)$，但需调整以满足严格边界。</li>
+</ol>
+<h4 id="步骤2：定义修正项网络"><a href="#步骤2：定义修正项网络" class="headerlink" title="步骤2：定义修正项网络"></a>步骤2：定义修正项网络</h4><ol>
+<li>设神经网络 $N(x; \theta)$ 为修正项，满足 $N(x; \theta) &#x3D; 0$ 在 $\partial \Omega$ 上。  </li>
+<li>实现方式：  <ul>
+<li>乘性约束：$N(x; \theta) &#x3D; d(x) \cdot \tilde{N}(x; \theta)$，其中 $d(x)$ 是距离函数（$d(x)&#x3D;0$ 在 $\partial \Omega$ 上，$d(x)&gt;0$ 在 $\Omega$ 内部）。  </li>
+<li>加性约束：$N(x; \theta) &#x3D; \tilde{N}(x; \theta) - \text{Proj}_{\partial \Omega}(\tilde{N}(x; \theta))$，通过投影算子消除边界值。</li>
+</ul>
+</li>
+</ol>
+<h4 id="步骤3：组合近似函数"><a href="#步骤3：组合近似函数" class="headerlink" title="步骤3：组合近似函数"></a>步骤3：组合近似函数</h4><p>总近似函数为：<br>$$ f(x; \theta) &#x3D; \phi(x) + N(x; \theta). $$<br>由于 $N(x; \theta) &#x3D; 0$ 在边界上，$f(x; \theta)$ 自动满足 $f|_{\partial \Omega} &#x3D; g(x)$。</p>
+<h4 id="步骤4：训练策略"><a href="#步骤4：训练策略" class="headerlink" title="步骤4：训练策略"></a>步骤4：训练策略</h4><ol>
+<li>损失函数仅需考虑内部残差：<br>$$ J(\theta) &#x3D; |\nabla \cdot (a(x, f) \nabla f) + h|_{L^2(\Omega)}^2. $$</li>
+<li>无需额外惩罚边界项，因边界条件已被严格满足。</li>
+</ol>
+<hr>
+<h2 id="数值实现示例（以-d-x-法为例）"><a href="#数值实现示例（以-d-x-法为例）" class="headerlink" title="数值实现示例（以 $d(x)$ 法为例）"></a>数值实现示例（以 $d(x)$ 法为例）</h2><h3 id="1-定义距离函数"><a href="#1-定义距离函数" class="headerlink" title="1. 定义距离函数"></a>1. 定义距离函数</h3><ul>
+<li>对 $\Omega \subset \mathbb{R}^d$，计算 $d(x) &#x3D; \text{dist}(x, \partial \Omega)$。  </li>
+<li>例如，若 $\Omega &#x3D; [0,1]^d$，则 $d(x) &#x3D; x_1(1-x_1)x_2(1-x_2)\cdots x_d(1-x_d)$。</li>
+</ul>
+<h3 id="2-构建神经网络"><a href="#2-构建神经网络" class="headerlink" title="2. 构建神经网络"></a>2. 构建神经网络</h3><ul>
+<li>修正网络 $\tilde{N}(x; \theta)$ 可为多层感知机（MLP）。  </li>
+<li>实际修正项：$N(x; \theta) &#x3D; d(x) \cdot \tilde{N}(x; \theta)$。</li>
+</ul>
+<h3 id="3-训练流程"><a href="#3-训练流程" class="headerlink" title="3. 训练流程"></a>3. 训练流程</h3><ul>
+<li>采样内部点 ${x_i} \subset \Omega$，计算损失 $J(\theta)$。  </li>
+<li>使用优化器（如Adam）更新 $\theta$ 以最小化 $J(\theta)$。</li>
+</ul>
+<hr>
+<h2 id="理论保证"><a href="#理论保证" class="headerlink" title="理论保证"></a>理论保证</h2><ul>
+<li><strong>严格满足边界</strong>：由构造 $f(x; \theta) &#x3D; g(x) + 0 &#x3D; g(x)$ 在 $\partial \Omega$ 上。  </li>
+<li><strong>逼近能力</strong>：若 $\tilde{N}(x; \theta)$ 的假设空间足够丰富（如神经网络为通用逼近器），则 $f(x; \theta)$ 可逼近任意光滑解。</li>
+</ul>
+<hr>
+<h2 id="对比传统惩罚法"><a href="#对比传统惩罚法" class="headerlink" title="对比传统惩罚法"></a>对比传统惩罚法</h2><table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+<th><strong>边界处理</strong></th>
+<th><strong>训练稳定性</strong></th>
+<th><strong>适用场景</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>边界硬约束法</td>
+<td>严格满足</td>
+<td>高（无超参数）</td>
+<td>边界条件复杂或敏感问题</td>
+</tr>
+<tr>
+<td>边界惩罚法</td>
+<td>近似满足（软约束）</td>
+<td>依赖惩罚权重</td>
+<td>简单边界或快速原型</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="组合与概率第5题补充证明细节"><a href="#组合与概率第5题补充证明细节" class="headerlink" title="组合与概率第5题补充证明细节"></a>组合与概率第5题补充证明细节</h1><h2 id="题目-8"><a href="#题目-8" class="headerlink" title="题目"></a>题目</h2><p>稠密图中弦存在性的概率方法细化。</p>
+<hr>
+<h2 id="关键步骤补充"><a href="#关键步骤补充" class="headerlink" title="关键步骤补充"></a>关键步骤补充</h2><h3 id="步骤1：随机选择候选圈"><a href="#步骤1：随机选择候选圈" class="headerlink" title="步骤1：随机选择候选圈"></a>步骤1：随机选择候选圈</h3><ol>
+<li>随机选取顶点序列 $v_1, v_2, \ldots, v_k$，尝试构造圈 $C$。  </li>
+<li>根据边密度 $n^{1+\epsilon}$，计算 $k &#x3D; \lfloor \log n \rfloor$，使得候选圈存在概率高。</li>
+</ol>
+<h3 id="步骤2：计算弦的期望数"><a href="#步骤2：计算弦的期望数" class="headerlink" title="步骤2：计算弦的期望数"></a>步骤2：计算弦的期望数</h3><p>对圈 $C$ 的每对非相邻顶点 $(v_i, v_j)$，弦存在的概率为 $p &#x3D; \frac{|E|}{n^2} \geq n^{-1+\epsilon}$。  </p>
+<ul>
+<li>圈 $C$ 的弦对数为 $\binom{k}{2} - k$。  </li>
+<li>期望弦数：$\mathbb{E}[\text{弦数}] \geq \left( \frac{k^2}{2} - k \right) n^{-1+\epsilon}$。</li>
+</ul>
+<p>当 $k \geq n^{\epsilon&#x2F;2}$，则 $\mathbb{E}[\text{弦数}] \geq \frac{k^2}{4} n^{-1+\epsilon} \geq n^{\epsilon} \cdot n^{-1+\epsilon} &#x3D; n^{2\epsilon -1}$。<br>若 $\epsilon &gt; \frac{1}{2}$，期望弦数随 $n$ 增长，存在至少一条弦的概率趋近于1。</p>
+<h3 id="步骤3：二阶矩法修正方差"><a href="#步骤3：二阶矩法修正方差" class="headerlink" title="步骤3：二阶矩法修正方差"></a>步骤3：二阶矩法修正方差</h3><p>计算方差 $\text{Var}(\text{弦数})$，利用Chebyshev不等式证明高概率存在弦。  </p>
+<hr>
+<h2 id="结论-4"><a href="#结论-4" class="headerlink" title="结论"></a>结论</h2><p>对 $\epsilon &gt; \frac{1}{2}$ 和充分大的 $n$，所有边数超过 $n^{1+\epsilon}$ 的图必含至少 $|E(C)|$ 条弦。</p>
+<h1 id="应用与计算数学第1题详细解答"><a href="#应用与计算数学第1题详细解答" class="headerlink" title="应用与计算数学第1题详细解答"></a>应用与计算数学第1题详细解答</h1><h2 id="题目-9"><a href="#题目-9" class="headerlink" title="题目"></a>题目</h2><p>考虑线性方程组 ( Ax &#x3D; b )，其中 ( A \in \mathbb{R}^{n \times n} ) 是对称半正定矩阵且对角元均为正数。<br>(a) 证明高斯-赛德尔迭代从任意初始点出发均收敛。<br>(b) 若 ( A ) 为对角矩阵，证明高斯-赛德尔迭代一步即可收敛。</p>
+<hr>
+<h2 id="部分-a-：高斯-赛德尔迭代的收敛性证明"><a href="#部分-a-：高斯-赛德尔迭代的收敛性证明" class="headerlink" title="部分 (a)：高斯-赛德尔迭代的收敛性证明"></a>部分 (a)：高斯-赛德尔迭代的收敛性证明</h2><h3 id="关键思路-5"><a href="#关键思路-5" class="headerlink" title="关键思路"></a>关键思路</h3><ol>
+<li><strong>矩阵分裂</strong>：将 ( A ) 分解为 ( A &#x3D; D - L - U )，其中 ( D ) 为对角矩阵，( L ) 和 ( U ) 分别为严格下三角和上三角矩阵。  </li>
+<li><strong>迭代矩阵的谱半径</strong>：证明迭代矩阵 ( G &#x3D; (D - L)^{-1}U ) 的谱半径 ( \rho(G) &lt; 1 )。</li>
+</ol>
+<h3 id="严格证明步骤-1"><a href="#严格证明步骤-1" class="headerlink" title="严格证明步骤"></a>严格证明步骤</h3><h4 id="步骤1：高斯-赛德尔迭代格式"><a href="#步骤1：高斯-赛德尔迭代格式" class="headerlink" title="步骤1：高斯-赛德尔迭代格式"></a>步骤1：高斯-赛德尔迭代格式</h4><p>迭代公式为：<br>$$<br>x^{(k+1)}<em>i &#x3D; \frac{1}{A</em>{ii}} \left( b_i - \sum_{j&#x3D;1}^{i-1} A_{ij}x^{(k+1)}<em>j - \sum</em>{j&#x3D;i+1}^n A_{ij}x^{(k)}_j \right).<br>$$<br>等价于矩阵形式：<br>$$<br>x^{(k+1)} &#x3D; (D - L)^{-1} \left( U x^{(k)} + b \right).<br>$$</p>
+<h4 id="步骤2：对称半正定矩阵的性质"><a href="#步骤2：对称半正定矩阵的性质" class="headerlink" title="步骤2：对称半正定矩阵的性质"></a>步骤2：对称半正定矩阵的性质</h4><ul>
+<li>对称半正定矩阵的特征值非负。  </li>
+<li>对角元 ( A_{ii} &gt; 0 )，故 ( D ) 正定。</li>
+</ul>
+<h4 id="步骤3：迭代矩阵的谱半径分析"><a href="#步骤3：迭代矩阵的谱半径分析" class="headerlink" title="步骤3：迭代矩阵的谱半径分析"></a>步骤3：迭代矩阵的谱半径分析</h4><p>定义迭代矩阵 ( G &#x3D; (D - L)^{-1}U )，需证明 ( \rho(G) &lt; 1 )。  </p>
+<ul>
+<li>由于 ( A ) 对称半正定，( D - L - U &#x3D; A ) 正定。  </li>
+<li>利用 <strong>Stein-Rosenberg 定理</strong>：对于对称半正定矩阵，高斯-赛德尔迭代的谱半径满足 ( \rho(G) &lt; 1 )。</li>
+</ul>
+<h4 id="步骤4：收敛性结论"><a href="#步骤4：收敛性结论" class="headerlink" title="步骤4：收敛性结论"></a>步骤4：收敛性结论</h4><p>由于 ( \rho(G) &lt; 1 )，迭代法从任意初始点收敛到精确解。</p>
+<hr>
+<h2 id="部分-b-：对角矩阵的一步收敛性"><a href="#部分-b-：对角矩阵的一步收敛性" class="headerlink" title="部分 (b)：对角矩阵的一步收敛性"></a>部分 (b)：对角矩阵的一步收敛性</h2><h3 id="关键思路-6"><a href="#关键思路-6" class="headerlink" title="关键思路"></a>关键思路</h3><p>若 ( A ) 为对角矩阵，则 ( L &#x3D; U &#x3D; 0 )，迭代公式直接退化为精确解。</p>
+<h3 id="严格证明步骤-2"><a href="#严格证明步骤-2" class="headerlink" title="严格证明步骤"></a>严格证明步骤</h3><h4 id="步骤1：对角矩阵的迭代格式"><a href="#步骤1：对角矩阵的迭代格式" class="headerlink" title="步骤1：对角矩阵的迭代格式"></a>步骤1：对角矩阵的迭代格式</h4><p>当 ( A ) 为对角矩阵时，迭代公式简化为：<br>$$<br>x^{(k+1)}<em>i &#x3D; \frac{1}{A</em>{ii}} \left( b_i - 0 - 0 \right) &#x3D; \frac{b_i}{A_{ii}}.<br>$$</p>
+<h4 id="步骤2：一步达到精确解"><a href="#步骤2：一步达到精确解" class="headerlink" title="步骤2：一步达到精确解"></a>步骤2：一步达到精确解</h4><ul>
+<li>初始猜测 ( x^{(0)} ) 任意，一步迭代后：<br>$$<br>x^{(1)}<em>i &#x3D; \frac{b_i}{A</em>{ii}}.<br>$$</li>
+<li>由于 ( A ) 是对角矩阵，精确解为 ( x^*<em>i &#x3D; \frac{b_i}{A</em>{ii}} )，故 ( x^{(1)} &#x3D; x^* )。</li>
+</ul>
+<hr>
+<h2 id="物理意义-1"><a href="#物理意义-1" class="headerlink" title="物理意义"></a>物理意义</h2><ul>
+<li>**(a)**：对称半正定矩阵的迭代过程能量单调递减，保证收敛。  </li>
+<li>**(b)**：对角矩阵无耦合变量，直接解耦为单变量方程，一步即得解。</li>
+</ul>
+<h1 id="应用与计算数学第4-a-题详细解答"><a href="#应用与计算数学第4-a-题详细解答" class="headerlink" title="应用与计算数学第4(a)题详细解答"></a>应用与计算数学第4(a)题详细解答</h1><h2 id="题目-10"><a href="#题目-10" class="headerlink" title="题目"></a>题目</h2><p>设椭圆方程：<br>$$ \begin{cases}<br>-\nabla \cdot (a(x, u) \nabla u) &#x3D; h(x), &amp; x \in \Omega \subset \mathbb{R}^d, \<br>u(x) &#x3D; g(x), &amp; x \in \partial \Omega,<br>\end{cases} $$<br>其中 ( a(x, u) \geq c &gt; 0 )，且 ( a(x, u) ) 关于 ( u ) 满足局部Lipschitz和多项式增长条件。<br>定义目标函数：<br>$$ J(f) &#x3D; |\nabla \cdot (a(x, f) \nabla f + h|<em>{L^2(\Omega)}^2 + |f - g|</em>{L^2(\partial \Omega)}^2. $$<br>需证明：对任意 ( \epsilon &gt; 0 )，存在常数 ( C &gt; 0 ) 使得 ( J(f) &lt; C\epsilon )。</p>
+<hr>
+<h2 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h2><h3 id="1-近似空间的存在性"><a href="#1-近似空间的存在性" class="headerlink" title="1. 近似空间的存在性"></a>1. 近似空间的存在性</h3><p>由题设，近似函数空间 ( \mathcal{F} ) 满足：对任意 ( u \in C^2(\Omega) )，存在 ( f \in \mathcal{F} ) 使得<br>$$ \sup_{x \in \Omega} |\partial^\alpha u - \partial^\alpha f| \leq \epsilon \quad (|\alpha| \leq 2). $$</p>
+<h3 id="2-控制内部残差"><a href="#2-控制内部残差" class="headerlink" title="2. 控制内部残差"></a>2. 控制内部残差</h3><ul>
+<li><p><strong>Lipschitz条件应用</strong>：<br>由 ( |a(x, u) - a(x, v)| \leq C(|u|^{k} + |v|^{k}) |u - v| )，当 ( |u - f|<em>{C^0} \leq \epsilon )，可得<br>$$ |a(x, u) - a(x, f)|</em>{L^\infty} \leq C \epsilon. $$</p>
+</li>
+<li><p><strong>梯度项估计</strong>：<br>$$ |\nabla (a(x, u)\nabla u - \nabla (a(x, f)\nabla f)|<em>{L^2} \leq C \left( |u - f|</em>{C^1} + |u - f|_{C^0} \right). $$</p>
+</li>
+</ul>
+<h3 id="3-边界残差控制"><a href="#3-边界残差控制" class="headerlink" title="3. 边界残差控制"></a>3. 边界残差控制</h3><p>由迹定理（Trace Theorem），存在常数 ( C_T ) 使得<br>$$ |f - g|<em>{L^2(\partial \Omega)} \leq C_T |f - u|</em>{H^1(\Omega)}. $$</p>
+<h3 id="4-综合估计"><a href="#4-综合估计" class="headerlink" title="4. 综合估计"></a>4. 综合估计</h3><p>选择 ( f ) 使得 ( |u - f|_{C^2} \leq \epsilon )，则<br>$$ J(f) \leq C_1 \epsilon^2 + C_2 \epsilon^2 \leq C \epsilon. $$</p>
+<hr>
+<h2 id="结论-5"><a href="#结论-5" class="headerlink" title="结论"></a>结论</h2><p>对任意 ( \epsilon &gt; 0 )，存在近似函数 ( f \in \mathcal{F} ) 使得 ( J(f) &lt; C\epsilon )，证毕。</p>
+<hr>
+<h1 id="应用与计算数学第4-b-题详细解答"><a href="#应用与计算数学第4-b-题详细解答" class="headerlink" title="应用与计算数学第4(b)题详细解答"></a>应用与计算数学第4(b)题详细解答</h1><h2 id="题目-11"><a href="#题目-11" class="headerlink" title="题目"></a>题目</h2><p>当 ( a(x, u) &#x3D; 1 ) 时，若 ( J(f(\cdot; \theta_k)) \to 0 )，证明 ( |f(\cdot; \theta_k) - u|_{L^2(\Omega)} \to 0 )。</p>
+<hr>
+<h2 id="关键步骤-1"><a href="#关键步骤-1" class="headerlink" title="关键步骤"></a>关键步骤</h2><h3 id="1-方程简化"><a href="#1-方程简化" class="headerlink" title="1. 方程简化"></a>1. 方程简化</h3><p>当 ( a(x, u) &#x3D; 1 )，方程退化为泊松方程：<br>$$ -\Delta u &#x3D; h(x), \quad u|_{\partial \Omega} &#x3D; g(x). $$</p>
+<h3 id="2-能量估计"><a href="#2-能量估计" class="headerlink" title="2. 能量估计"></a>2. 能量估计</h3><p>目标函数 ( J(f) ) 为：<br>$$ J(f) &#x3D; |\Delta f + h|<em>{L^2(\Omega)}^2 + |f - g|</em>{L^2(\partial \Omega)}^2. $$</p>
+<p>由椭圆方程的正则性，若 ( J(f) \to 0 )，则：</p>
+<ol>
+<li><strong>内部一致性</strong>：( \Delta f \to -h ) 在 ( L^2 ) 中，  </li>
+<li><strong>边界一致性</strong>：( f \to g ) 在 ( L^2(\partial \Omega) ) 中。</li>
+</ol>
+<h3 id="3-弱解的唯一性"><a href="#3-弱解的唯一性" class="headerlink" title="3. 弱解的唯一性"></a>3. 弱解的唯一性</h3><p>定义双线性形式：<br>$$ B(u, v) &#x3D; \int_\Omega \nabla u \cdot \nabla v , dx. $$<br>由Lax-Milgram定理，泊松方程的解 ( u ) 是唯一的弱解，满足：<br>$$ B(u, v) &#x3D; \int_\Omega h v , dx \quad \forall v \in H_0^1(\Omega). $$</p>
+<h3 id="4-收敛性证明"><a href="#4-收敛性证明" class="headerlink" title="4. 收敛性证明"></a>4. 收敛性证明</h3><p>对近似解 ( f_k )，由 ( J(f_k) \to 0 ) 得：</p>
+<ul>
+<li>( \Delta f_k \to -h ) 在 ( L^2 ) 中，  </li>
+<li>( f_k \to g ) 在边界上。</li>
+</ul>
+<p>利用能量不等式：<br>$$ |f_k - u|<em>{H^1(\Omega)} \leq C \left( |\Delta(f_k - u)|</em>{L^2} + |f_k - u|_{L^2(\partial \Omega)} \right). $$<br>当 ( J(f_k) \to 0 )，右端趋于零，故 ( f_k \to u ) 在 ( H^1(\Omega) ) 中，进而通过Sobolev嵌入得 ( L^2 )-收敛。</p>
+<hr>
+<h2 id="结论-6"><a href="#结论-6" class="headerlink" title="结论"></a>结论</h2><p>当 ( J(f_k) \to 0 ) 时，近似解 ( f_k ) 在 ( L^2(\Omega) ) 中收敛到真实解 ( u )，证毕。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/20/%E6%88%91%E7%9A%84%E9%83%A8%E5%88%86%E8%A7%A3%E7%AD%94%E6%80%9D%E8%B7%AF/" data-id="cm8lae9e400006sydf8w10q2z" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/22/ROS_%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/13/%E9%98%BF%E9%87%8C%E7%AB%9E%E8%B5%9B2023_%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/22/ROS_%E7%AE%97%E6%B3%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/20/%E6%88%91%E7%9A%84%E9%83%A8%E5%88%86%E8%A7%A3%E7%AD%94%E6%80%9D%E8%B7%AF/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/13/%E9%98%BF%E9%87%8C%E7%AB%9E%E8%B5%9B2023_%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/12/HMM-viterbi/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/12/30/%E7%8B%AC%E4%BA%BA%E8%84%89%E6%84%9F%E6%83%B3/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
