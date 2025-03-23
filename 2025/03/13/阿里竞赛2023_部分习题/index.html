@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="2023阿里巴巴全球数字竞赛决赛试题应用与计算数学1. 线性方程组的高斯-赛德尔迭代考虑线性方程组$$ Ax &#x3D; b, $$其中 $A &#x3D; (A_{ij}) \in \mathbb{R}^{n \times n}$ 是对称半正定矩阵且对角元均为正数，$b &#x3D; (b_i) \in \mathbb{R}^n$。假设方程组有解，使用高斯-赛德尔迭代求解，其格式为$$ x^{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2025/03/13/%E9%98%BF%E9%87%8C%E7%AB%9E%E8%B5%9B2023_%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2023阿里巴巴全球数字竞赛决赛试题应用与计算数学1. 线性方程组的高斯-赛德尔迭代考虑线性方程组$$ Ax &#x3D; b, $$其中 $A &#x3D; (A_{ij}) \in \mathbb{R}^{n \times n}$ 是对称半正定矩阵且对角元均为正数，$b &#x3D; (b_i) \in \mathbb{R}^n$。假设方程组有解，使用高斯-赛德尔迭代求解，其格式为$$ x^{">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-12T20:09:42.240Z">
+<meta property="article:modified_time" content="2025-03-12T21:09:52.512Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-阿里竞赛2023_部分习题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/13/%E9%98%BF%E9%87%8C%E7%AB%9E%E8%B5%9B2023_%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2025-03-12T20:09:42.240Z" itemprop="datePublished">2025-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="2023阿里巴巴全球数字竞赛决赛试题"><a href="#2023阿里巴巴全球数字竞赛决赛试题" class="headerlink" title="2023阿里巴巴全球数字竞赛决赛试题"></a>2023阿里巴巴全球数字竞赛决赛试题</h1><h2 id="应用与计算数学"><a href="#应用与计算数学" class="headerlink" title="应用与计算数学"></a>应用与计算数学</h2><h3 id="1-线性方程组的高斯-赛德尔迭代"><a href="#1-线性方程组的高斯-赛德尔迭代" class="headerlink" title="1. 线性方程组的高斯-赛德尔迭代"></a>1. 线性方程组的高斯-赛德尔迭代</h3><p>考虑线性方程组<br>$$ Ax &#x3D; b, $$<br>其中 $A &#x3D; (A_{ij}) \in \mathbb{R}^{n \times n}$ 是对称半正定矩阵且对角元均为正数，$b &#x3D; (b_i) \in \mathbb{R}^n$。假设方程组有解，使用高斯-赛德尔迭代求解，其格式为<br>$$ x^{(k+1)}<em>i :&#x3D; \frac{1}{A</em>{ii}} \left( b_i - \sum_{j&#x3D;1}^{i-1} A_{ij}x^{(k+1)}<em>j - \sum</em>{j&#x3D;i+1}^{n} A_{ij}x^{(k)}_j \right), \quad i &#x3D; 1, \ldots, n, , k \in \mathbb{N}. $$  </p>
+<p>(a) 证明高斯-赛德尔迭代从任意初始点出发均收敛。<br>(b) 若矩阵 $A$ 为对角矩阵，证明不论初始点如何选取，高斯-赛德尔迭代一步即可收敛。</p>
+<hr>
+<h3 id="2-大语言模型（LLM）的奖励模型优化"><a href="#2-大语言模型（LLM）的奖励模型优化" class="headerlink" title="2. 大语言模型（LLM）的奖励模型优化"></a>2. 大语言模型（LLM）的奖励模型优化</h3><p>为了使LLM与人类偏好对齐，需对其生成回答的奖励模型进行微调。给定一个提示（prompt），LLM生成 $n$ 个回答，人类标注者将其按质量排序为 $\tau(1) \prec \tau(2) \prec \cdots \prec \tau(n)$。假设存在一个在区间 $[-1, 1]$ 上强凹且单调递增的函数 $G$，目标是训练奖励模型，为第 $i$ 个回答分配评分 $0 \leq r_i \leq 1$，使其满足优化问题：<br>$$ \max_{0 \leq r_{\tau(1)} &lt; \cdots &lt; r_{\tau(n)} \leq 1} \sum_{i&lt;j} G(r_{\tau(i)} - r_{\tau(j)}) $$  </p>
+<p>(a) 解释为何目标函数<br>$$ L(r_1, \ldots, r_n) :&#x3D; \sum_{i&lt;j} G(r_{\tau(i)} - r_{\tau(j)}) $$<br>是凹函数但不是强凹函数（假设 $G$ 足够光滑），并证明该优化问题存在唯一解 $r_1^*, \ldots, r_n^* \in [0, 1]^n$。<br>(b) 证明唯一解满足<br>$$ 1 &#x3D; r_{\tau(1)}^* \geq r_{\tau(2)}^* \geq \cdots \geq r_{\tau(n)}^* &#x3D; 0, $$<br>且对所有 $i \in [n]$，有 $r_{\tau(i)}^* + r_{\tau(n+1-i)}^* &#x3D; 1$。<br>(c) 当 $n \to \infty$ 时，假设 $r_1^*, \ldots, r_n^*$ 的经验分布收敛于区间 $[0, 1]$ 上的概率测度 $\mu$。若 $\mu^*$ 使得泛函<br>$$ \mathbb{E}<em>{X,X’ \sim \mu} G(|X - X’|) $$<br>取得最大值，证明此时对任意 $c \in [0, 1]$，有<br>$$ \mathbb{E}</em>{X \sim \mu^*} G(|X - c|) $$<br>与 $c$ 无关。</p>
+<hr>
+<h3 id="3-一维交互作用粒子系统的随机微分方程"><a href="#3-一维交互作用粒子系统的随机微分方程" class="headerlink" title="3. 一维交互作用粒子系统的随机微分方程"></a>3. 一维交互作用粒子系统的随机微分方程</h3><p>考虑由以下方程描述的一维粒子系统：<br>$$ dX_i &#x3D; -U’(X_i)dt - \theta \left( X_i - \frac{1}{N} \sum_{k&#x3D;1}^{N} X_k \right) dt + \sigma dW_t^i, \quad i &#x3D; 1, 2, \ldots, N, $$<br>其中 $\theta, \sigma &gt; 0$，势能 $U(x) &#x3D; \frac{1}{4}x^4 - \frac{1}{2}x^2$，${W_t^i}$ 是独立的布朗运动。</p>
+<p>(a) 写出 $N$ 个粒子联合分布 $F_N(t, y)$ 的福克-普朗克方程。<br>(b) 若初始分布为独立同分布 $F_N(0) &#x3D; f_0^{\otimes N}$（$f_0 \in \mathcal{S}(\mathbb{R})$），定义相对熵<br>$$ H(F_N(t)|f_0^{\otimes N}) &#x3D; \int_{\mathbb{R}^N} F_N(t) \log \frac{F_N(t)}{f_0^{\otimes N}} dx_1 \cdots dx_N. $$<br>证明对任意固定时间 $T &gt; 0$，存在仅依赖 $T$ 的常数 $C_T$，使得<br>$$ \sup_{t \in [0,T]} H(F_N(t)|f_0^{\otimes N}) \leq C_T &lt; \infty. $$<br>(c) 能否将 (b) 的结果推广到一致时间界 $t \in [0, \infty)$? 给出结论并辅以直观分析。</p>
+<hr>
+<h3 id="4-椭圆方程的近似解"><a href="#4-椭圆方程的近似解" class="headerlink" title="4. 椭圆方程的近似解"></a>4. 椭圆方程的近似解</h3><p>考虑有界开集 $\Omega \subset \mathbb{R}^d$ 上的椭圆方程：<br>$$ \begin{cases}<br>-\nabla \cdot (a(x, u) \nabla u) &#x3D; h(x), &amp; x \in \Omega, \<br>u(x) &#x3D; g(x), &amp; x \in \partial \Omega,<br>\end{cases} $$<br>其中 $a(x, u) \geq c &gt; 0$，且 $\partial \Omega$ 是 $C^2$ 光滑的。设 $f(t, x; \theta) \in \mathcal{F}$ 为近似解，满足对任意 $u \in C^2(\Omega)$，存在 $f$ 逼近 $u$ 及其导数。</p>
+<p>(a) 若 $a(x, u)$ 关于 $u$ 满足局部 Lipschitz 和多项式增长条件，定义目标函数<br>$$ J(f(\cdot; \theta)) &#x3D; |\nabla \cdot (a(x, f) \nabla f) + h|<em>{L^2(\Omega)}^2 + |f - g|</em>{L^2(\partial \Omega)}^2. $$<br>证明对任意 $\epsilon &gt; 0$，存在 $C &gt; 0$ 使得 $J(f(\cdot; \theta)) &lt; C\epsilon$。<br>(b) 当 $a(x, u) &#x3D; 1$，若 $J(f(\cdot; \theta_k)) \to 0$，证明 $|f(\cdot; \theta_k) - u|_{L^2(\Omega)} \to 0$。<br>(c) 构造一种新方法，使近似函数严格满足边界条件。</p>
+<hr>
+<h3 id="5-秋千摆动的数学模型"><a href="#5-秋千摆动的数学模型" class="headerlink" title="5. 秋千摆动的数学模型"></a>5. 秋千摆动的数学模型</h3><p>考虑秋千的线性化模型：<br>$$ \frac{d^2 \phi}{dt^2} + (1 + \epsilon \cos(\omega t)) \phi &#x3D; 0, \quad \phi(0) &#x3D; 0, , \phi’(0) &#x3D; 1, $$<br>其中 $\epsilon \ll 1$。</p>
+<p>(a) 讨论参数 $\omega$ 的取值范围以使秋千摆幅增大。<br>(b) 当 $\omega &#x3D; 1$，将解展开为 $\epsilon$ 的级数<br>$$ \phi(t) &#x3D; \phi_0(t) + \epsilon \phi_1(t) + \epsilon^2 \phi_2(t) + \cdots, $$<br>推导 $\phi_0(t)$ 至 $O(1)$ 项。<br>(c) 若模型修正为<br>$$ \frac{d^2 \phi}{dt^2} + (1 - \alpha \epsilon^2 + \cos(\omega t)) \phi &#x3D; 0, $$<br>确定 $\alpha$ 的范围以使摆幅仍能放大（已知 $\omega &#x3D; 1$）。</p>
+<h1 id="2023阿里巴巴全球数字竞赛决赛试题-1"><a href="#2023阿里巴巴全球数字竞赛决赛试题-1" class="headerlink" title="2023阿里巴巴全球数字竞赛决赛试题"></a>2023阿里巴巴全球数字竞赛决赛试题</h1><h2 id="组合与概率"><a href="#组合与概率" class="headerlink" title="组合与概率"></a>组合与概率</h2><ol>
+<li><strong>双边布朗运动的最大值分布</strong><br>假设 $B_t$ 满足：$(B_t)<em>{t \geq 0}$ 和 $(B</em>{-t})<em>{t \geq 0}$ 是两个独立的标准布朗运动，且 $B_0 &#x3D; 0$。定义随机过程<br>$$ X_t &#x3D; B_t - |t|, \quad t \in \mathbb{R}. $$<br>令 $T$ 为几乎必然唯一的时间，使得 $X_T &#x3D; \max</em>{s \in \mathbb{R}} X_s$。证明：<br>$$ (X_{T+s})<em>{s \geq 0} \quad \text{和} \quad (X</em>{T-s})_{s \geq 0} $$<br>同分布。<br><strong>注</strong>：如能提出并证明该命题的离散版本将获得部分分数。</li>
+</ol>
+<hr>
+<ol start="2">
+<li><strong>双随机矩阵的置换匹配</strong><br>对每个正整数 $n$，找出最大的实数 $f(n)$，使得对每个 $n \times n$ 双随机矩阵 $M$（即元素非负且每行每列和为1），均存在一个置换矩阵 $P$，满足<br>$$ M_{i,P(i)} \geq f(n), \quad \forall i \in [n]. $$<br>其中 $[n] &#x3D; {1, 2, \ldots, n}$。</li>
+</ol>
+<hr>
+<ol start="3">
+<li><p><strong>均匀变量的统计量性质</strong><br>令 $n \geq 2$，$U_1, U_2, \ldots, U_n$ 为独立的标准均匀变量（即 $P(U_i \leq \alpha) &#x3D; \alpha$ 对 $\alpha \in (0,1)$ 成立）。定义统计量：  </p>
+<ul>
+<li><strong>最小尺度统计量</strong>：<br>$$ S(U_1, \ldots, U_n) &#x3D; \min_{i \in [n]} \frac{n}{i} U_{(i)}, $$<br>其中 $U_{(i)}$ 为第 $i$ 个顺序统计量（升序排列后第 $i$ 小的值）。  </li>
+<li><strong>幂平均统计量</strong>（$r \neq 0$）：<br>$$ M_r(U_1, \ldots, U_n) &#x3D; \left( \frac{1}{n} \sum_{i&#x3D;1}^n U_{(i)}^r \right)^{1&#x2F;r}. $$</li>
+</ul>
+<p>(a) 证明 $S(U_1, \ldots, U_n)$ 是标准均匀变量。<br>(b) 证明 $M_r(U_1, \ldots, U_n)$ 是次均匀变量（即 $P(M_r \leq \alpha) \geq \alpha$）当且仅当 $r \leq -1$。</p>
+</li>
+</ol>
+<hr>
+<ol start="4">
+<li><strong>信息效率与协方差不等式</strong><br>(a) <strong>布尔向量搜索问题</strong><br>服务器存储了 $m$ 个 $n$ 维布尔向量（允许重复），需通过询问“第 $i$ 个向量的第 $j$ 位”找到与所有存储向量不同的新向量，或判定不存在。求最少询问次数（答案需为 $m$ 和 $n$ 的函数）。<br><strong>提示</strong>：答案随 $m$ 的取值分三个区间。<br>(b) <strong>布尔函数的协方差界</strong><br>设 $f, g: {0,1}^n \to {-1,1}$ 为布尔函数，$T$ 为确定 $f(x)$ 的询问策略。对随机字符串 $X \sim \prod_{i&#x3D;1}^n \text{Ber}(q_i)$，定义：<br>- $\delta_i(T) &#x3D; P(\text{策略 } T \text{ 询问第 } i \text{ 位})$，<br>- $\text{Inf}_i(g) &#x3D; P(g(X) \neq g(X^{(i)}))$（$X^{(i)}$ 为翻转第 $i$ 位后的字符串）。<br>证明：</li>
+</ol>
+<p>$$ |\text{Cov}(f(X), g(X))| \leq \sum_{i&#x3D;1}^n \delta_i(T) \cdot \text{Inf}_i(g). $$</p>
+<hr>
+<ol start="5">
+<li><strong>稠密图中的弦存在性</strong><br>证明：对任意 $\epsilon &gt; 0$，存在 $n_0$，使得当 $n \geq n_0$ 时，所有边数不少于 $n^{1+\epsilon}$ 的 $n$ 阶简单图均包含一个圈 $C$，满足其至少有 $|E(C)|$ 条弦（弦指连接 $C$ 中两顶点但不属于 $C$ 的边）。<br><strong>注</strong>：对较小常数 $\epsilon &gt; 0$ 的证明将获得部分分数。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/13/%E9%98%BF%E9%87%8C%E7%AB%9E%E8%B5%9B2023_%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98/" data-id="cm8ga9g1b0003ugyd45qx98aj" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/22/ROS_%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/12/HMM-viterbi/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/22/ROS_%E7%AE%97%E6%B3%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/13/%E9%98%BF%E9%87%8C%E7%AB%9E%E8%B5%9B2023_%E9%83%A8%E5%88%86%E4%B9%A0%E9%A2%98/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/12/HMM-viterbi/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/12/30/%E7%8B%AC%E4%BA%BA%E8%84%89%E6%84%9F%E6%83%B3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/12/26/%E5%8F%97%E8%BE%B1%E6%84%9F%E6%83%B3/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
